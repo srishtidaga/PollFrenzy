@@ -1,0 +1,37 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 7vh;
+    background-color:palevioletred;
+    font-family: sans-serif;
+    font-size: large;
+
+}
+.logo{
+    color:floralwhite;
+    letter-spacing: 2vh;
+    text-transform: capitalize;
+    font-size: 35px;
+}
+.nav-line{
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+}
+.nav-line a{
+    color: whitesmoke;
+    font-size: 16px;
+    text-transform: initial;
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: 2px;
+    text-decoration: none;
+}
+.nav-line li{
+    list-style: none;
+}
