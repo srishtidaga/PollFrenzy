@@ -1,0 +1,105 @@
+body{
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+*{
+    box-sizing: border-box;
+}
+.team-section{
+    background-color:#009688;
+    min-height: 100vh;
+    padding: 70px 15px 30px;
+}
+.container{
+    max-width: 3000px;
+    margin: auto;
+    cursor: pointer;
+}
+.team-section .section-title{
+    flex-basis: 100%;
+    max-width: 100%;
+    margin-bottom: 70px;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+.team-section .section-title h1{
+    font-size: 40px;
+    text-align:center;
+    margin: 0;
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 700;
+}
+.team-section .section-title p{
+    font-size:20px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
+    text-align: center;
+    margin: 15px 0 0;
+    color: white;
+}
+.team-section .team-items{
+    flex-basis: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.team-section .team-items .item{
+    flex-basis: calc(25% - 30px);
+    max-width: calc(25% - 30px);
+    transition: all .5s ease;
+    margin-bottom: 40px;
+}
+.team-section .team-items .item img{
+    display: block;
+    width: 100%;
+    border-radius: 8px;
+}
+.team-section .team-items .item .inner{
+    position: relative;
+    z-index: 11;
+    padding: 0 15px;
+}
+.team-section .team-items .item .inner .info{
+    background-color: white;
+    text-align: center;
+    padding: 20px 15px;
+    border-radius: 8px;
+    transition: all .5s ease;
+    margin-top: -40px;
+}
+.team-section .team-items .item:hover .info{
+    transform: translateY(-20px);
+}
+.team-section .team-items .item:hover{
+    transform: translateY(-10px);
+}
+.team-section .team-items .item .inner .info h5{
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: black;
+}
+.team-section .team-items .item .inner .info p{
+    font-size: 16px;
+    font-weight: 400;
+    color: black;
+    margin: 10px 0 0;
+}
+span{
+    color: black;
+}
+@media(max-width:991px){
+    .team-section .team-items .item{
+        flex-basis: calc(50% - 30px);
+        max-width: calc(50% - 30px);
+    }
+}
+@media(max-width:767px){
+    .team-section .team-items .item{
+        flex-basis: calc(100%);
+        max-width: calc(100%);
+    }
+}

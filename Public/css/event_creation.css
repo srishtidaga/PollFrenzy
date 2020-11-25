@@ -1,0 +1,187 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  font-family: monospace;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 600px;
+  margin: auto;
+}
+.image {
+  width: 100%;
+}
+.image img {
+  width: 100%;
+  height: 100%;
+}
+.form-data {
+  text-align: center;
+}
+.Register-box {
+  padding: 20px;
+  width: 100%;
+  background-color: #2e2e2e;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+h2 {
+  margin-bottom: 50px;
+  font-weight: 800;
+  color: white;
+}
+.box {
+  display: flex;
+  flex-direction: row ;
+  position: relative;
+  width: 100%;
+  margin-bottom: 40px;
+  overflow: hidden;
+}
+ul li a {
+  color: white;
+  padding: 20px;
+}
+input[type="text"],
+input[type="password"],
+input[type="date"],select,textarea{
+  font-size: 1.2rem;
+  width: 100%;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid black;
+  padding: 5px;
+  padding-left: 45px;
+  background: none;
+  color: white;
+}
+
+input[type="text"]:focus ~ label,
+input[type="password"],textarea:focus ~ label,
+input[type="text"]:valid ~ label,
+input[type="password"]:valid ~ label {
+  opacity: 0;
+}
+label {
+  font-size: 1.3rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  padding-left: 45px;
+  color: white;
+}
+.fa {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  color: white;
+}
+.fa-plus{
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: auto;
+  pointer-events: none;
+  color: white;
+  /* border: 2px solid white; */
+  /* border-radius: 50%; */
+}
+span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: -100%;
+  pointer-events: none;
+  border-bottom: 2px solid whitesmoke;
+}
+input[type="text"],select:focus ~ span,
+input[type="password"]:focus ~ span,
+input[type="text"],select:valid ~ span
+input[type="password"]:valid ~ span {
+  left: 0;
+  transition: 0.4s ease-in;
+}
+input[type="submit"] {
+  border: none;
+  cursor: pointer;
+  padding: 10px 40px;
+  border-radius: 25px;
+  outline: none;
+  background-color: black;
+  color: white;
+  width: 100%;
+}
+
+@media (max-width: 690px) {
+  .image {
+    display: none;
+  }
+  .container {
+    width: 400px;
+  }
+  .Register-box {
+    width: 100%;
+  }
+}
+@media (max-width: 400px) {
+  h2 {
+    font-size: 18px;
+  }
+  .container {
+    width: 100vw;
+    padding: 20px;
+  }
+  .Register-box {
+    width: 100%;
+  }
+}
+
+#box_new{
+  margin: 20px;
+  background-color: white;
+  color: black;
+  padding: 10px;
+}
+
+h1{
+  font-size: 36px;
+  color: white;
+}
+
+p{
+  font-size: 2rem;
+  width: 100%;
+  border: none;
+  outline: none;
+  /* padding-left: 45px; */
+  padding: 8px;
+  background: none;
+  color: black;
+}
+
+hr{
+  margin: 10px;
+}
+.error {
+	display: block;
+	box-sizing: border-box;
+	padding: 8px 20px;
+	border: 1px solid rgba(27,31,35,.15);
+	margin-bottom: 10px;
+	font-size: 13px;
+	border-radius: 5px;
+	background-color: red;
+	color: black;
+}
+

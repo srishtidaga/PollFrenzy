@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="/css/registration.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="image">
+        <img src="/images/registration.jpg" />
+      </div>
+      <form action="/client_registration" method="POST" class="Register-box">
+        <div class="form-data">
+          <h2>Registration Form</h2>
+          <% if(message.error){ %>
+            <div class="error">
+              <p style="font-size: 0.9rem;"><%=message.error%></p>
+            </div>
+          <%}%>
+          <div class="box">
+            <input type="text" name="client_name" 
+            value="
+            <%if(name){%>
+                name
+            <%}%>
+            "
+            required />
+            <label>UserName</label>
+            <i class="fa fa-user" aria-hidden="true"></i>
+            <span></span>
+          </div>
+
+          <div class="box">
+            <input type="email" name="client_email" required />
+            <label>Email</label>
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+            <span></span>
+          </div>
+          <div class="box">
+            <input type="date" name="client_dob" required />
+            <label>DOB</label>
+            <i class="fa fa-calendar" aria-hidden="true"></i>
+            <span></span>
+          </div>
+
+          <div class="box">
+            <input type="text" name="client_mobile_no" minlength="10" maxlength="10" required />
+            <label>Mobile Number</label>
+            <i
+              class="fa fa-mobile"
+              aria-hidden="true"
+            ></i>
+            <span></span>
+          </div>
+          <div class="box">
+            <input type="text" name="client_aadharname" minlength="12" maxlength="12" required />
+            <label>Aadhar Number</label>
+            <i
+              class="fa fa-id-card"
+              aria-hidden="true"
+            ></i>
+            <span></span>
+          </div>
+          <div class="box">
+            <input type="text" name="client_address" required />
+            <label>Address</label>
+            <i
+              class="fa fa-address-book"
+              aria-hidden="true"
+            ></i>
+            <span></span>
+          </div>
+          <div class="box">
+            <input type="password" name="client_psw" required />
+            <label>Password</label>
+            <i class="fa fa-lock" aria-hidden="true"></i>
+            <span></span>
+          </div>
+
+          <div class="box">
+            <input type="password" name="client_rpsw" required />
+            <label> Re-Enter password</label>
+            <i class="fa fa-lock" aria-hidden="true"></i>
+            <span></span>
+          </div>
+          <input type="submit" value="Register Now" />
+          <ul style="margin-top: 1.5rem">
+            <li>
+              <a
+                style="font-size: 1.3rem; text-decoration: none"
+                href="/client_login"
+                >Already Login</a
+              >
+            </li>
+          </ul>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

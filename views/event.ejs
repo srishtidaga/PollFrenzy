@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Details</title>
+    <link rel="stylesheet" href="/css/event_see.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="head">
+        <h1>Event Details</h1>
+      </div>
+      <% for(let i=0;i < Object.keys(all_events).length;i++){%>
+        <div class="card">
+          <div class="data">
+            <p>Event Name</p>
+            <p class="detail"><%=all_events[i].name %></p>
+          </div>
+          <div class="data">
+            <p>Event Date</p>
+            <p class="detail"><%= all_events[i].start_date.toDateString() %></p>
+          </div>
+          <div class="data">
+            <p>end_date</p>
+            <p class="detail"><%=all_events[i].end_date.toDateString() %></p>
+          </div>
+          <div class="data">
+            <p>chief_guest_names</p>
+            <p class="detail"><%=all_events[i].chief_guest_names %></p>
+          </div>
+          <div class="data">
+            <p>ticket_price</p>
+            <p class="detail">₹ <%=all_events[i].ticket_price %></p>
+          </div>
+          <div class="data">
+            <p>total_capacity</p>
+            <p class="detail"><%=all_events[i].total_capacity %></p>
+          </div>
+          <div class="data">
+            <p>venue</p>
+            <p class="detail"><%=all_events[i].venue %></p>
+          </div>
+          <div class="data">
+            <a class="btn" href="/ticketbook?event_id=<%=all_events[i].id%>" target="_blank">Book Tickets</a>
+          </div>
+        </div>
+      <%}%>
+<!-- 
+      <div class="data">
+        <p>Feedback</p>
+        <div class="box">
+          <div class="data">
+            <p>Name</p>
+            <p class="detail">sdfdsfd</p>
+          </div>
+          <div class="data">
+            <p>Date</p>
+            <p class="detail">sdfdsfd</p>
+          </div>
+          <div class="data">
+            <p>Post</p>
+            <p class="detail">sdfdsfd</p>
+          </div>
+        </div>
+      </div> -->
+
+    </div>
+  </body>
+</html>

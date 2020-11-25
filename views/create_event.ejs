@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Event</title>
+    <link rel="stylesheet" href="css/event_creation.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- <div class="image">
+            <img src="/images/registration.jpg">
+        </div> -->
+            <form action="/create_event" method="POST" class="Register-box">
+                <div class="form-data">
+                    <% if(message.error){ %>
+                        <div class="error">
+                          <p style="font-size: 0.9rem;"><%=message.error%></p>
+                        </div>
+                    <%}%>
+                    <% if(message.success){ %>
+                        <div class="success">
+                          <p style="font-size: 0.9rem;"><%=message.success%></p>
+                        </div>
+                    <%}%>
+                   <h2>Create Event Form</h2>
+                   <div class="box">
+                        <input type="text" name="event_name" required>
+                        <label>Name</label>
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        <span></span>
+                    </div>
+                    <div class="box">
+                        <!-- <label>Type :</label> -->
+                        <select name="type" id="type" name="event_type">
+                            <option value="concerts">Concerts</option>
+                            <option value="workshop">Workshop</option>
+                            <option value="party">Party</option>
+                            <option value="seminar">Seminar</option>
+                        </select>
+                        <i class="fa fa-envelope" aria-hidden="true"></i>                        
+                        <span></span>
+                    </div>
+                    <div class="box">
+                        <div style="display: flex;flex-direction: row; justify-content: space-between; width: 100%;">
+                            <p style="color: white;
+                            font-size: 1rem;border-bottom: 1px solid black">Start Date:</p>
+                            <input type="date" name="start_date" required>
+                        </div>
+                        <i class="fa fa-calendar-plus" aria-hidden="true"></i>
+                        <span></span>
+                    </div>
+                    <div class="box">
+                        <div style="display: flex;flex-direction: row; justify-content: space-between; width: 100%;">
+                            <p style="color: white;
+                            font-size: 1rem;border-bottom: 1px solid black">End Date:</p>
+                            <input type="date" name="end_date" required>
+                        </div>
+                        <!-- <label>End Date</label> -->
+                        <i class="fa fa-calendar-plus" aria-hidden="true"></i>
+                        <span></span>
+                    </div>
+                    <div class="box">
+                        <input type="text" name="start_end_time" required>
+                        <label>Time</label>
+                        <i class="fa fa-clock" aria-hidden="true"></i>
+                        <span></span>
+                    </div>
+                    <div class="box">
+                        <textarea name="chief_guest" id="" cols="" rows="1"></textarea>
+                        <!-- <input type="textarea" required> -->
+                        <label>Chief Guest</label>
+                        <i class="fa fa-address-book" aria-hidden="true"></i>
+                        <span></span>
+                    </div>
+                    <!-- <div id="myDIV" class="box">
+                        <input type="text" name="addbtn" id="addbtn">
+                        <label></label>
+                        <span></span>
+                    </div> -->
+                    <div class="box">
+                        <input type="text" name="ticket_price" required>
+                        <label>Ticket Price</label>
+                        <i class="fa fa-rupee-sign" aria-hidden="true"></i>
+                        <span></span>
+                    </div>
+                    <div class="box">
+                        <input type="text" name="total_capacity" required>
+                        <label>Total Capacity</label>
+                        <i class="fa fa-user-friends" aria-hidden="true"></i>
+                        <span></span>
+                    </div>
+                    <div class="box">
+                        <input type="text" name="venue" required>
+                        <label>Venue</label>
+                        <i class="fa fa-id-card" aria-hidden="true"></i>
+                        <span></span>
+                    </div>
+                    <div class="box">
+                        <input type="text" name="min_age" required>
+                        <label>Minimum Age</label>
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        <span></span>
+                    </div>
+          
+                    <input type="submit" value="Create New Event">
+                    <!-- <ul style="margin-top: 1.5rem;">
+                        <li><a style="font-size: 1.3rem; text-decoration: none;" href="/regislogin">Already Login</a></li>
+                    </ul> -->
+                    <span></span>
+                    <!-- <h1 class="form-data">Older Events</h1>
+                    <div id="box_new">
+                        <div style="box-shadow: 5px 5px;">
+                                <input type="" name="" id="">
+                                <p><b>Event Name : XYZ</b></p>
+                                
+                                <p><b>Date : 11/08/2020</b></p>
+                                <i class="fa fa-calendar" aria-hidden="true"></i>
+                                <span></span>
+                        </div>                      
+                    </div> -->
+                </div>
+            </form>
+        </div>
+
+    <script>
+        document.getElementById('click_to_add').addEventListener(function(event){
+
+        });
+        // function addbtn(){
+        //     var x = document.getElementById("click_to_add");
+        //     if (x.style.display === "none")
+        //         x.style.display = "block";
+        //     else
+        //         x.style.display = "none";
+        // }
+    </script>
+</body>
+</html>

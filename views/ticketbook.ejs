@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket booking</title>
+    <link rel="stylesheet" href="css/tcbook.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700,900" rel="stylesheet">
+</head>
+<body>
+    <%if(this_event_id){%>
+    <div class="container">
+        <div class="container-time">
+            <h2 class="heading">Event Name</h2>
+            <p><%= name%></p>
+            <h3 class="heading-days">Event Day</h3>
+            <p style="margin-bottom: 30px;">Timings</p>
+            <p><%= start_end_time%></p>
+            <h3>FROM</h3>
+            <p> <%=start_date%> <h3>TO</h3> <%=end_date%> </p>
+            <h3 class="heading-days">Chief Guest Names</h3>
+            <p><%= chief_guest%></p>
+            <p>Ticket price starting at ₹<%=price %></p>
+            <hr>
+            <h4 class="heading-phone">Call Us: 8430799992</h4>
+        </div>
+
+        <div class="container-form">
+            <form action="/ticketbook" method="POST">
+                <h2 class="heading heading-yellow">Book Your ticket</h2>
+                <% if(message.error){ %>
+                    <div class="error">
+                      <p style="font-size: 0.9rem;"><%=message.error%></p>
+                    </div>
+                <%}%>
+                <% if(message.success){ %>
+                    <div class="success">
+                      <p style="font-size: 0.9rem;"><%=message.success%></p>
+                    </div>
+                <%}%>
+                <div class="form-field">
+                    <p style="width: 100%;">Event Id</p>
+                    <!-- <p><%= this_event_id %></p> -->
+                    <input style="width: 100%;" type="text" name="event_id" value="<%= this_event_id %>" style="background-color: transparent; border: none;" readonly required>
+                </div>
+                <div class="form-field">
+                    <p>Your Name</p>
+                    <input type="text" name="name" placeholder="Your Name" required>
+                </div>
+                <!-- <div class="form-field">
+                    <p>Your email</p>
+                    <input type="email" name="email" placeholder="Your email" required>
+                </div> -->
+                <div class="form-field">
+                    <p>Date</p>
+                    <input type="date" name="date" value="<%= current_date%>" readonly>
+                </div>
+                <div class="form-field">
+                    <p>Mobile Number</p>
+                    <input type="phone" name="mobile" minlength="10" maxlength="10" required>
+                </div>
+                <div class="form-field">
+                    <p>How many people?</p>
+                    <input type="text" name="persons">
+                    <!-- <select name="persons" id="#">
+                    <option value="1">1 person</option>
+                    <option value="2">2 persons</option>
+                    <option value="3">3 persosn</option>
+                    <option value="4">4 persons</option>
+                    <option value="5">5 persons</option>
+                    <option value="5+">5+ persons</option>
+                    </select> -->
+                </div>
+                <% if(message.success){ %>
+                    <div class="success">
+                      <p style="font-size: 0.9rem;">Tickets Purchased</p>
+                    </div>
+                <%} else{%>
+                    <button class="btn">Submit</button>
+                    <button class="btn">Reset</button>
+                <%}%>
+            </form>
+        </div>
+    </div>
+    <%}else{%>
+        <h1 style="color: black;">Event ID not found</h1>
+    <%}%>
+</body>
+</html>

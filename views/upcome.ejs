@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Our Team</title>
+    <link rel="stylesheet" href="/css/style7.css">
+</head>
+<body>
+    <section class="team-section">
+        <div class="container">
+            <div class="row">
+                <div class="section-title">
+                    <h1>Event-Dates</h1>
+                    <p> Remember to book your tickets</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="team-items">
+                    <div class="item" data-url="/events/concerts">
+                        <img src="/images/concert1.jpg" alt="team" />
+                        <div class="inner">
+                            <div class="info">
+                                <h5>Concerts</h5>
+                                <p>timing</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item" data-url="/events/workshop">
+                        <img src="/images/workshop1.jpg" alt="team" />
+                        <div class="inner">
+                            <div class="info">
+                                <h5>Workshops</h5>
+                                <p>Timing</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item" data-url="/events/party">
+                        <img src="/images/party1.jpg" alt="team" />
+                        <div class="inner">
+                            <div class="info">
+                                <h5>Party</h5>
+                                <p>Timing</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item" data-url="/events/seminar">
+                        <img src="/images/seminar.jpg" alt="team" />
+                        <div class="inner">
+                            <div class="info">
+                                <h5>Seminar</h5>
+                                <p>Timing</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        document.querySelectorAll('.item').forEach(
+            (x)=>{
+                x.addEventListener('click',function(event){
+                    window.location=window.location+this.dataset.url;
+                });
+                console.log(x);
+            }
+        )
+    </script>
+</body>
+</html>
